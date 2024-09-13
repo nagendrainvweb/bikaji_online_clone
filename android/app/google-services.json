@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "543184859561",
+    "firebase_url": "https://bikaji-c7698.firebaseio.com",
+    "project_id": "bikaji-c7698",
+    "storage_bucket": "bikaji-c7698.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543184859561:android:c5845870c9c18752f6d4b8",
+        "android_client_info": {
+          "package_name": "com.bikajionline.bikaji"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543184859561-s815kg6dn6e9qruashhbfckobpkidjb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8D4Vkm8cRqGTqTM3-ypMTRmNEnnyfiR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543184859561-s815kg6dn6e9qruashhbfckobpkidjb2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "543184859561-a0afct2dcgi3s5rblll965tn0h6dn2mt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inventifweb.bikaji"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543184859561:android:c7fa42c69d0fa1aef6d4b8",
+        "android_client_info": {
+          "package_name": "com.inventifweb.bikaji"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543184859561-s815kg6dn6e9qruashhbfckobpkidjb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8D4Vkm8cRqGTqTM3-ypMTRmNEnnyfiR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543184859561-s815kg6dn6e9qruashhbfckobpkidjb2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "543184859561-a0afct2dcgi3s5rblll965tn0h6dn2mt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inventifweb.bikaji"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

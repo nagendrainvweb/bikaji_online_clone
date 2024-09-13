@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bikajionline.bikaji",
+      "sha256_cert_fingerprints":
+      ["69:40:D1:E8:76:7A:AD:6B:76:E5:2B:6F:6D:21:44:D0:93:3E:48:95:54:ED:CE:79:C5:11:69:06:06:78:64:6A"]
+    }
+  }]
