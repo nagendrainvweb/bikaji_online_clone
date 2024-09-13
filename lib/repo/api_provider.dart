@@ -40,11 +40,6 @@ class ApiProvider {
     final checksum = "${time}sendOtpMD5${mobile}${otp}";
     final headers = {Constants.CHECKSUM: checksum};
     final postJson = {
-      UrlConstants.APP_VERSION: appversion,
-      UrlConstants.DEVICE: device,
-      UrlConstants.MOBILE: mobile,
-      UrlConstants.OTP: otp,
-      Constants.TIME: "$time",
     };
     try {
       final request =
@@ -107,11 +102,6 @@ class ApiProvider {
     final checksum = "${time}loginMD5${number}";
     final headers = {Constants.CHECKSUM: checksum};
     final postJson = {
-      "mobileNumber": '$number',
-      "appVersion": '$appversion',
-      "device": '$device',
-      "fcm_token": '$fcm_token',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -141,11 +131,6 @@ class ApiProvider {
     final checksum = "${time}updateFcmTokenMD5${fcm_token}";
     final headers = {Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$user_id',
-      "appVersion": '$appversion',
-      "device": '$device',
-      "fcm_token": '$fcm_token',
-      Constants.TIME: "$time",
     };
     myPrint(postJson.toString());
     try {
@@ -171,17 +156,6 @@ class ApiProvider {
     final headers = {Constants.CHECKSUM: checksum};
 
     final postJson = {
-      "mobileNumber": '$mobileNumber',
-      "first_name": '$firstName',
-      "last_name": '$lastName',
-      "imageBase64": '$imagebase64',
-      "dob": '$dob',
-      "email": '$email',
-      "password": '$password',
-      "appVersion": '$appversion',
-      "device": '$device',
-      "fcm_token": '$fcm_token',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     myPrint(UrlList.USER_REGISTRATION);
@@ -216,10 +190,6 @@ class ApiProvider {
     final checksum = "${time}getOffersMD5${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$userid",
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     try {
       final request = await http.post(Uri.parse(UrlList.FETCH_OFFERS),
@@ -252,12 +222,6 @@ class ApiProvider {
       Constants.CHECKSUM: "$checksum"
     };
     final postJson = {
-      "user_id": "$userid",
-      "coupon_code": "$couponCode",
-      "paid_amount": "$amount",
-      "appVersion": '$appversion',
-      "device": '$device',
-      "time": "$time",
     };
     myPrint(postJson.toString());
     try {
@@ -339,16 +303,6 @@ class ApiProvider {
     };
 
     final postJson = {
-      "user_id": "$userid",
-      "appVersion": '$appversion',
-      "device": '$device',
-      "time": '$time',
-      "billing_address_id": "$billing_address_id",
-      "shipping_address_id": "$shipping_address_id",
-      "coupon_code": "$coupon_code",
-      "offer_type": '$offer_type',
-      "discount_amount": "$discount_amount",
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     myPrint(token.toString());
@@ -381,14 +335,6 @@ class ApiProvider {
       Constants.CHECKSUM: "$checksum"
     };
     final postJson = {
-      "user_id": "$userid",
-      "appVersion": '$appversion',
-      "device": '$device',
-      "time": "$time",
-      "order_id": "$order_id",
-      "payment_amount": "$payment_amount",
-      "coupon_code": "$coupon_code",
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -427,16 +373,6 @@ class ApiProvider {
     };
     myPrint(headers.toString());
     final postJson = {
-      "user_id": "$userid",
-      "appVersion": '$appversion',
-      "device": '$device',
-      "time": "$time",
-      "order_id": "$order_id",
-      "transaction_id": "$transaction_id",
-      "payment_status": "$paymentStatus",
-      "payment_amount": "$payment_amount",
-      "coupon_code": "$coupon_code",
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -468,11 +404,6 @@ class ApiProvider {
     final checksum = "${time}notificationMD5${userid}${date}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$userid",
-      "date": "$date",
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -513,11 +444,6 @@ class ApiProvider {
     final checksum = "${time}deleteNotificationsMD5${userid}${notificationIds}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$userid",
-      "notification_ids": "$notificationIds",
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -550,11 +476,6 @@ class ApiProvider {
     final checksum = "${time}readNotificationsMD5${userid}${notificationIds}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$userid",
-      "notification_ids": "$notificationIds",
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -582,9 +503,6 @@ class ApiProvider {
     final appversion = Constants.appversion;
     Map<String, String> headers = {Constants.AUTH: "$token"};
     final postJson = {
-      "user_id": "$userid",
-      "appVersion": '$appversion',
-      "device": '$device',
     };
     try {
       final request = await http.post(Uri.parse(UrlList.FETCH_STATE_LIST),
@@ -618,11 +536,6 @@ class ApiProvider {
         "$url $error \n\n Mobile number : ${(mobile_no.isNotEmpty) ? mobile_no : ""}";
     //Map<String, String> headers = {Constants.AUTH: "$token"};
     final postJson = {
-      "email_id": '$email',
-      "subject": '$subject',
-      "message": '$message',
-      "appVersion": '$appversion',
-      "device": '$device',
     };
     try {
       final request = await http.post(
@@ -646,10 +559,6 @@ class ApiProvider {
     final checksum = "${time}getCouponMD5${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$userid",
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     try {
       final request = await http.post(Uri.parse(UrlList.FETCH_COUPONS),
@@ -679,10 +588,6 @@ class ApiProvider {
     final checksum = "${time}getDashboardDataMD5${user_id}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$user_id",
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(headers.toString());
     myPrint(postJson.toString());
@@ -719,11 +624,6 @@ class ApiProvider {
     final checksum = "${time}addWishListMD5${userid}${productId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "product_id": '$productId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -766,11 +666,6 @@ class ApiProvider {
     final checksum = "${time}subCategoryListMD5${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$userid",
-      "category_id": "$categoryId",
-      "appVersion": "$appversion",
-      "device": "$device",
-      Constants.TIME: "$time"
     };
     myPrint('postjson  $postJson');
     try {
@@ -811,15 +706,6 @@ class ApiProvider {
           "${time}orderEnquiryMD5${name}${email}${mobileNo}${company}${city}";
       final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
       final postJson = {
-        "user_id": "$userid",
-        "name": '$name',
-        "mobileNumber": '$mobileNo',
-        "company": '$company',
-        "city": '$city',
-        "email": '$email',
-        "appVersion": "$appversion",
-        "device": "$device",
-        Constants.TIME: "$time"
       };
       final request = await http.post(Uri.parse(UrlList.CORPORATE_ORDER_ENQUIRY),
           body: postJson, headers: headers);
@@ -840,10 +726,6 @@ class ApiProvider {
     final checksum = "${time}getCategoryListMD5${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": "$userid",
-      "appVersion": "$appversion",
-      "device": "$device",
-      Constants.TIME: "$time"
     };
     myPrint('postjson  $postJson');
     try {
@@ -884,11 +766,6 @@ class ApiProvider {
     final checksum = "${time}getProductDetailMD5${userid}${productId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "appVersion": '$appversion',
-      "device": '$device',
-      "product_id": '$productId',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -921,12 +798,6 @@ class ApiProvider {
     final checksum = "${time}getReviewMD5${userid}${productId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "appVersion": '$appversion',
-      "device": '$device',
-      "product_id": '$productId',
-      "pageNo": '$pageNo',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -961,15 +832,6 @@ class ApiProvider {
         "${time}addReviewMD5${userid}${productId}${rating}${reviewTitle}${review}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "product_id": '$productId',
-      "rating": '$rating',
-      "review_title": '$reviewTitle',
-      "review": '$review',
-      "appVersion": '$appversion',
-      "device": '$device',
-      "name": "$firstName $lastName",
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
 
@@ -998,11 +860,6 @@ class ApiProvider {
     final checksum = "${time}getWishListMD5${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "appVersion": '$appversion',
-      "device": '$device',
-      "pageNo": '$pageNo',
-      Constants.TIME: "$time"
     };
 
     try {
@@ -1040,13 +897,6 @@ class ApiProvider {
       Constants.CHECKSUM: "$checksum"
     };
     final postJson = {
-      "user_id": '$userid',
-      "product_id": '$productId',
-      "qty": '$qty',
-      "size": '$sizeId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      'time': "$time"
     };
     myPrint(headers.toString());
     myPrint(postJson.toString());
@@ -1077,11 +927,6 @@ class ApiProvider {
     final checksum = "${time}deleteWishListMD5${userid}${productId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "product_id": '$productId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -1108,12 +953,6 @@ class ApiProvider {
     final checksum = "${time}productListMD5${userid}${categoryid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "pageNo": '$pageNo',
-      "category_id": '$categoryid',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -1140,12 +979,6 @@ class ApiProvider {
     final checksum = "${time}getDashboardDetailsMD5${userid}${type}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "pageNo": '$pageNo',
-      "type": '$type',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -1179,14 +1012,6 @@ class ApiProvider {
         "${time}filterProductListMD5${userid}${category_id}${type}${price1}${price2}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "pageNo": '$pageNo',
-      "category_id": '$category_id',
-      "type": '$type',
-      "price1": '$price1',
-      "price2": '$price2',
-      "appVersion": '$appversion',
-      "device": '$device'
     };
     myPrint(postJson.toString());
     try {
@@ -1212,10 +1037,6 @@ class ApiProvider {
     final checksum = "${time}profileDetailsMD5${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     final request = await http.post(Uri.parse(UrlList.FETCH_USER_DETAILS),
@@ -1252,15 +1073,6 @@ class ApiProvider {
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
 
     final postJson = {
-      "user_id": '$user_id',
-      "first_name": '$firstName',
-      "last_name": '$lastName',
-      "image": '$imagebase64',
-      "dob": '$dob',
-      "email": '$email',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME: "$time"
     };
     myPrint(postJson.toString());
     try {
@@ -1288,10 +1100,6 @@ class ApiProvider {
     final checksum = "${time}addressesMD5${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME : "$time"
     };
     try {
       final request = await http.post(Uri.parse(UrlList.FETCH_ADDRESSES),
@@ -1328,11 +1136,6 @@ class ApiProvider {
     final checksum = "${time}deleteAddressesMD5${userid}${addressId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "address_id": '$addressId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME :"$time"
     };
     myPrint(postJson.toString());
     try {
@@ -1398,11 +1201,6 @@ class ApiProvider {
         "${time}getSearchData${userid}${searchText}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "text": '$searchText',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME:'$time'
     };
     final request = await http.post(Uri.parse(UrlList.FETCH_SEARCH_DATA),
         headers: headers, body: postJson);
@@ -1430,11 +1228,6 @@ class ApiProvider {
         "${time}orderDetails${userid}${orderId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "order_id": '$orderId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME:"$time"
     };
     myPrint(postJson.toString());
     try {
@@ -1467,10 +1260,6 @@ class ApiProvider {
         "${time}pastOrder${userid}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME:"$time"
     };
     myPrint(postJson.toString());
     try {
@@ -1503,14 +1292,9 @@ class ApiProvider {
     final time = Utility.getTimeStamp();
     final checksum = Utility.generateMd5("${time}getCartDataMD5${userId}");
     Map<String, String> headers = {
-      Constants.AUTH: "$token",
-      Constants.CHECKSUM: "$checksum"
     };
     final postJson = {
-      "user_id": '$userId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      'time': "$time"
+
     };
     myPrint(headers.toString());
     try {
@@ -1549,12 +1333,6 @@ class ApiProvider {
         "${time}removeFromCartMD5${userid}${productId}${sizeId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "product_id": '$productId',
-      "size": '$sizeId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME : '$time'
     };
     myPrint(postJson.toString());
     final request = await http.post(Uri.parse(UrlList.REMOVE_FROM_CART),
@@ -1580,12 +1358,6 @@ class ApiProvider {
         "${time}moveCartToWishlist${userid}${productId}${sizeId}";
     final headers = {Constants.AUTH: "$token", Constants.CHECKSUM: checksum};
     final postJson = {
-      "user_id": '$userid',
-      "product_id": '$productId',
-      "size": '$sizeId',
-      "appVersion": '$appversion',
-      "device": '$device',
-      Constants.TIME : "$time"
     };
     final request = await http.post(Uri.parse(UrlList.MOVE_FROM_CART_TO_WISHLIST),
         headers: headers, body: postJson);
@@ -1604,10 +1376,6 @@ class ApiProvider {
     final appversion = Constants.appversion;
     Map<String, String> headers = {Constants.AUTH: "$token"};
     final postJson = {
-      "user_id": '$userid',
-      "page_name": '$name',
-      "appVersion": '$appversion',
-      "device": '$device'
     };
     final request = await http.post(Uri.parse(UrlList.FETCH_POLICIES),
         headers: headers, body: postJson);
@@ -1626,13 +1394,6 @@ class ApiProvider {
     final appversion = Constants.appversion;
     Map<String, String> headers = {Constants.AUTH: "$token"};
     final postJson = {
-      "user_id": '$userid',
-      "name": '$name',
-      "email": '$email',
-      "number": '$number',
-      "query": '$desc',
-      "device": '$device',
-      "appVersion": "$appversion"
     };
     myPrint(postJson.toString());
     final request = await http.post(Uri.parse(UrlList.SEND_ABOUT_US_QUERY),
