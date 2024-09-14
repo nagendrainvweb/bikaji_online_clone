@@ -123,7 +123,7 @@ To get started with the project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bikaji-online.git
+   git clone https://github.com/nagendrainvweb/bikaji-online.git
    ```
 
 2. Navigate to the project directory:
